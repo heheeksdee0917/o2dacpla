@@ -13,7 +13,7 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
   const isPortfolioPage = location.pathname === '/portfolio' || location.pathname.startsWith('/portfolio/');
 
-  const categories = ['Residential', 'Commercial', 'Housing', 'Interior', 'Competition', 'Hospitality'];
+  const categories = ['Residential', 'Housing', 'Commercial', 'Hospitality', 'Interior', 'Competition'];
 
   // Contact details (update with real ones when ready)
   const phone = '+603 6420 6345';
