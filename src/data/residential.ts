@@ -8,7 +8,7 @@ export const residentialProjects: Project[] = [
     title: 'MODÉCO HOUSE',
     location: 'Kuala Lumpur',
     category: 'Residential',
-    status: 'Submission',
+    status: 'Construction',
     projectTeam: ['Edric Choo Poo Liang', 'S.Kadhiraven', 'Danish Azhan'],
     images: [
       '/Gallery/Residential/Modeco/CP.avif',
@@ -209,7 +209,7 @@ export const residentialProjects: Project[] = [
     title: 'Sean House',
     location: 'Desa Park City, Kuala Lumpur',
     category: 'Residential',
-    status: 'Completed',
+    status: 'Construction',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Wendy Woon', 'Danish Azhan Azham', 'Kadhiraven Samynathan'],
     images: [
       '/Gallery/Residential/SeanHouse/CP.avif',
@@ -233,7 +233,7 @@ export const residentialProjects: Project[] = [
     title: 'Tropical Shift House',
     location: 'Kuala Lumpur',
     category: 'Residential',
-    status: 'Submission',
+    status: 'Completed',
     projectTeam: ['Edric Choo Poo Liang', 'Joshua Quah'],
     images: [
       '/Gallery/Residential/TropicalShiftHouse/CP.avif',
@@ -282,12 +282,12 @@ export const residentialProjects: Project[] = [
     status: 'Submission',
     projectTeam: ['Edric Choo Poo Liang', 'S.Kadhiraven', 'Rafhana'],
     images: [
-      '/Gallery/Residential/InnerCourt/CP.avif',
       '/Gallery/Residential/InnerCourt/A1.avif',
       '/Gallery/Residential/InnerCourt/A2.avif',
       '/Gallery/Residential/InnerCourt/A3.avif',
       '/Gallery/Residential/InnerCourt/A4.avif',
       '/Gallery/Residential/InnerCourt/A5.avif',
+      '/Gallery/Residential/InnerCourt/CP.avif',
       '/Gallery/Residential/InnerCourt/A6.avif',
     ],
     detailContent: [
@@ -407,7 +407,7 @@ export const residentialProjects: Project[] = [
     title: 'Hilltop',
     location: 'Putra Hill, Selangor',
     category: 'Residential',
-    status: 'Built',
+    status: 'Schematic',
     projectTeam: ['Edric Choo Poo Liang', 'Quak Yi Jane', 'Aaren Neo'],
     images: [
       '/Gallery/Residential/Hilltop/CP.avif',
@@ -516,7 +516,7 @@ export const residentialProjects: Project[] = [
     title: 'Horizon House',
     location: 'Kuala Lumpur',
     category: 'Residential',
-    status: 'Submission',
+    status: 'Construction',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Mim Syn', 'Aaren Neo', 'Naveen Ram', 'Pang Jun Wei', 'Alireza'],
     images: [
       '/Gallery/Residential/HorizonHouse/CP.avif',
@@ -615,7 +615,6 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/RailworkBungalow/CP.avif',
       '/Gallery/Residential/RailworkBungalow/A1.avif',
       '/Gallery/Residential/RailworkBungalow/A2.avif',
-      '/Gallery/Residential/RailworkBungalow/A3.avif',
       '/Gallery/Residential/RailworkBungalow/A4.avif',
     ],
     detailContent: [
@@ -654,11 +653,9 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/Infill/CP.avif',
       '/Gallery/Residential/Infill/A1.avif',
       '/Gallery/Residential/Infill/A2.avif',
-      '/Gallery/Residential/Infill/A3.avif',
       '/Gallery/Residential/Infill/A4.avif',
       '/Gallery/Residential/Infill/A5.avif',
       '/Gallery/Residential/Infill/A6.avif',
-      '/Gallery/Residential/Infill/A7.avif',
       '/Gallery/Residential/Infill/A8.avif',
       '/Gallery/Residential/Infill/A9.avif',
       '/Gallery/Residential/Infill/A10.avif',
@@ -666,7 +663,6 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/Infill/A12.avif',
       '/Gallery/Residential/Infill/A13.avif',
       '/Gallery/Residential/Infill/A14.avif',
-      '/Gallery/Residential/Infill/A15.avif',
       '/Gallery/Residential/Infill/A16.avif',
     ],
     detailContent: [
@@ -686,7 +682,6 @@ export const residentialProjects: Project[] = [
     images: [
       '/Gallery/Residential/StackHouse/CP.avif',
       '/Gallery/Residential/StackHouse/A1.avif',
-      '/Gallery/Residential/StackHouse/A2.avif',
       '/Gallery/Residential/StackHouse/A3.avif',
       '/Gallery/Residential/StackHouse/A4.avif',
       '/Gallery/Residential/StackHouse/A5.avif',
