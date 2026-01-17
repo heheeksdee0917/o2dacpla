@@ -559,7 +559,6 @@ export const residentialProjects: Project[] = [
     images: [
       '/Gallery/Residential/ResortHome/CP.avif',
       '/Gallery/Residential/ResortHome/A1.avif',
-      '/Gallery/Residential/ResortHome/A2.avif',
       '/Gallery/Residential/ResortHome/A3.avif',
       '/Gallery/Residential/ResortHome/A4.avif',
       '/Gallery/Residential/ResortHome/A5.avif',
@@ -588,7 +587,7 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/ResortHome/A28.avif',
       '/Gallery/Residential/ResortHome/Diagram1.avif',
       '/Gallery/Residential/ResortHome/Diagram2.avif',
-      '/Gallery/Residential/ResortHome/Diagram2.avif',
+      '/Gallery/Residential/ResortHome/Diagram3.avif',
     ],
     detailContent: [
       { type: 'text', content: 'Informed by traditional vernacular house design, the house is planned around a central courtyard as a series of elevated independent spatial forms. This fragmentation challenges the conventional house design where most spaces are within a singular mass with limited cross ventilation, natural lighting, and in-between spaces.' },
