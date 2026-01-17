@@ -8,7 +8,6 @@ export const housingProjects: Project[] = [
     slug: 'bahagia-height',
     title: 'Bahagia Height',
     location: 'tbc',
-    year: '2000',
     category: 'Housing',
     status: 'tbc',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -25,7 +24,6 @@ export const housingProjects: Project[] = [
     slug: 'botanic-centre',
     title: 'Botanic Centre',
     location: 'tbc',
-    year: '2000',
     category: 'Housing',
     status: 'tbc',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -42,7 +40,6 @@ export const housingProjects: Project[] = [
     slug: 'split',
     title: 'split',
     location: 'tbc',
-    year: '2000',
     category: 'Housing',
     status: 'tbc',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -59,7 +56,6 @@ export const housingProjects: Project[] = [
     slug: 'the-quartz',
     title: 'The Quartz',
     location: 'Cheras, Kuala Lumpur',
-    year: '2022',
     category: 'Housing',
     status: 'Schematic',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -80,14 +76,12 @@ export const housingProjects: Project[] = [
       { type: 'text', content: 'At the crown, jagged glass penthouses catch and refract daylight, creating iridescent highlights that animate the skyline. These crystalline silhouettes, paired with the organic podium terrain and the carved urban voids, produce a composition that feels both monumental and unexpectedly fluid—a refined tectonic landscape charged with latent, untamed energy.' },
     ],
   },
-
   // 5. Vertical Street
   {
     id: 5,
     slug: 'vertical-street',
     title: 'Vertical Street',
     location: 'Jalan Alor, Kuala Lumpur',
-    year: '2022',
     category: 'Housing',
     status: 'Planning',
     projectTeam: ['Edric Choo Poo Liang', 'Evans Khor'],
@@ -102,14 +96,12 @@ export const housingProjects: Project[] = [
       { type: 'text', content: 'The residences above the mall reflect the market below through its staggered glass facade, a backdrop that shimmers together with the streets below, propagating the axis skyward.' },
     ],
   },
-
   // 6. The Mountain
   {
     id: 6,
     slug: 'the-mountain',
     title: 'The Mountain',
     location: 'Selangor',
-    year: '2023',
     category: 'Housing',
     status: 'Planning',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -125,14 +117,12 @@ export const housingProjects: Project[] = [
       { type: 'text', content: 'The volumes are carved in two right down the middle, creating rift valleys where sunlight and ventilation are able to penetrate the housing block.' },
     ],
   },
-
   // 7. Cascade 31
   {
     id: 7,
     slug: 'cascade-31',
     title: 'Cascade 31',
     location: 'Mont Kiara, Kuala Lumpur',
-    year: '2023',
     category: 'Housing',
     status: 'Proposal',
     projectTeam: ['Edric Choo Poo Liang', 'Evans Khor', 'Kong Xiang Lynn'],
@@ -167,14 +157,12 @@ export const housingProjects: Project[] = [
       { type: 'text', content: 'to accommodate growing commercial activity within a coherent architectural framework.' }
     ],
   },
-
   // 8. Shuffle & Shuttle
   {
     id: 8,
     slug: 'shuffle-and-shuttle',
     title: 'Shuffle & Shuttle',
     location: 'Kota Damansara, Selangor',
-    year: '2019',
     category: 'Housing',
     status: 'Proposal',
     projectTeam: ['Edric Choo Poo Liang', 'Joshua Quah'],
@@ -191,14 +179,12 @@ export const housingProjects: Project[] = [
       { type: 'text', content: 'Ground floor F&B and retail shops will attract neighboring population and give daily convenient to SoHo residents.' },
     ],
   },
-
   // 9. Sentul Raya
   {
     id: 9,
     slug: 'sentul-raya',
     title: 'Sentul Raya',
     location: 'Sentul, Kuala Lumpur',
-    year: '2018',
     category: 'Housing',
     status: 'Proposal',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -226,7 +212,6 @@ export const housingProjects: Project[] = [
     slug: 'garisan',
     title: 'Garisan',
     location: 'Puchong Prima, Selangor',
-    year: '2017',
     category: 'Housing',
     status: 'Towards CCC',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Rina Kamar', 'Lee Chear Shean', 'Goh Chew Yet', 'Khor Jia Xin', 'Tan YJ'],

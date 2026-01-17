@@ -8,7 +8,6 @@ export const competitionProjects: Project[] = [
     slug: 'kenyas-orphanage',
     title: 'ORPHANED & CHILDREN’s ECO-VILLAGE',
     location: 'SOY, KENYA',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Tang Ying Jien'],
@@ -41,14 +40,12 @@ export const competitionProjects: Project[] = [
       },
     ],
   },
-
   // 2. Landasan Jauhar
   {
     id: 2,
     slug: 'landasan-jauhar',
     title: 'Landasan Jauhar',
     location: 'Johor Bahru',
-    year: '2020',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Aaron Neo On E', 'Nicole Hooi Yi Tien', 'Mohd Afi b Abdul Malik', 'Amirul Shah Mumfahir'],
@@ -82,7 +79,6 @@ export const competitionProjects: Project[] = [
     slug: 'new-york-city-aquarium',
     title: 'New York City Aquarium',
     location: 'New York, USA',
-    year: '2017',
     category: 'Competition',
     status: 'Submission',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -118,7 +114,6 @@ export const competitionProjects: Project[] = [
     slug: 'fittorie',
     title: 'Fittorie',
     location: 'Vicenza, Italy',
-    year: '2020',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Quek Yi Jane', 'Nicole Hooi Yi Tien'],
@@ -160,7 +155,6 @@ export const competitionProjects: Project[] = [
     slug: 'marshland-stadia',
     title: 'Marshland Stadia',
     location: 'New York, US',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Farah Aliza Badarudin'],
@@ -194,7 +188,6 @@ export const competitionProjects: Project[] = [
     slug: 'uno-sg-merab',
     title: 'UNO Sg Merab',
     location: 'Sg. Merab, Kajang',
-    year: '2023',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Henry'],
@@ -226,7 +219,6 @@ export const competitionProjects: Project[] = [
     slug: 'elemental-mosque',
     title: 'The Elemental Mosque',
     location: 'Dubai',
-    year: '2018',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Wan Azhar (Coda)', 'Farah Aliza Badarudin', 'Lim Min Syn'],
@@ -251,7 +243,6 @@ export const competitionProjects: Project[] = [
     slug: 'singapore-founders-memorial',
     title: 'Singapore Founders’ Memorial',
     location: 'Singapore',
-    year: '2017',
     category: 'Competition',
     status: 'Proposal',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -272,14 +263,12 @@ export const competitionProjects: Project[] = [
       { type: 'text', content: 'Our symbolism focuses on subtleness of strength that gives a persistent pride towards the people. After all, a noble multiracial nation is a nation that projects stability, peaceful versatility and harmony unity.' },
     ],
   },
-
   // 9. National Museum of World Writing
   {
     id: 9,
     slug: 'national-museum-world-writing',
     title: 'National Museum of World Writing',
     location: 'Songdo, Seoul, South Korea',
-    year: '2017',
     category: 'Competition',
     status: 'Submission',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -303,7 +292,6 @@ export const competitionProjects: Project[] = [
     slug: 'imbauan-residence',
     title: 'Imbauan Residence',
     location: 'Kwasa Damansara, Selangor',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Tang Ying Jien'],
@@ -398,7 +386,6 @@ export const competitionProjects: Project[] = [
     slug: 'mgbc-hq',
     title: 'MGBC Headquarters',
     location: 'Bangi, Selangor',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Clyde Ong'],
@@ -426,7 +413,6 @@ export const competitionProjects: Project[] = [
     slug: 'pr1ma-affordable-housing',
     title: 'PR1MA Affordable Housing',
     location: 'Petaling Jaya, Selangor',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Clyde Ong'],
@@ -457,7 +443,6 @@ export const competitionProjects: Project[] = [
     slug: 'hong-kong-pixelated-housing',
     title: 'Hong Kong Pixelated Housing',
     location: 'Hong Kong',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Queenie Wong', 'Lee Chaer Shean', 'Goh Chew Yet'],
@@ -479,14 +464,12 @@ export const competitionProjects: Project[] = [
       { type: 'text', content: 'By sharing the staircases, the commercial spaces, and the in-between spaces. the vertical self-sustaining community would be encouraged to share resources, ideas, knowledge, skills, and time.' },
     ],
   },
-
   // 14. Future House
   {
     id: 14,
     slug: 'future-house',
     title: 'Future House',
     location: 'Flexible',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lee Chaer Shean'],
@@ -520,14 +503,12 @@ export const competitionProjects: Project[] = [
       },
     ],
   },
-
   // 15. Wet Market (Teluk Kumbar Market)
   {
     id: 15,
     slug: 'teluk-kumbar-wet-market',
     title: 'Wet Market (Teluk Kumbar Market)',
     location: 'Teluk Kumbar, Penang',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Clyde Ong'],
@@ -550,14 +531,12 @@ export const competitionProjects: Project[] = [
       },
     ],
   },
-
   // 16. A House For Master Lee
   {
     id: 16,
     slug: 'house-for-master-lee',
     title: 'A House For Master Lee',
     location: 'Gayasan-Ro, South Korea',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -593,14 +572,12 @@ export const competitionProjects: Project[] = [
       },
     ]
   },
-
   // 17. Tokyo Vertical Cemetery
   {
     id: 17,
     slug: 'tokyo-vertical-cemetery',
     title: 'Tokyo Vertical Cemetery',
     location: 'Shinjuku, Tokyo',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Clyde Ong'],
@@ -619,14 +596,12 @@ export const competitionProjects: Project[] = [
       { type: 'text', content: 'It is a cemetery also functions as a public park, bringing back the essence of belief where the dead returns to the nature and reconnected with the living. The overall cemetery appears as a vertical green spaces towering over the street of Shinjuku.' },
     ],
   },
-
   // 18. House for A Dream (Our Home)
   {
     id: 18,
     slug: 'house-for-a-dream',
     title: 'House for A Dream',
     location: 'South London',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Tang Ying Jien'],
@@ -658,7 +633,6 @@ export const competitionProjects: Project[] = [
     slug: 'nne',
     title: 'Nothing & Everything Else',
     location: 'Penang//Kuala Lumpur, Malaysia',
-    year: '2017',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -716,17 +690,16 @@ export const competitionProjects: Project[] = [
     slug: 'city-of-tomorrow',
     title: 'City Of Tomorrow',
     location: 'Petaling Jaya, Selangor',
-    year: '2020',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
     images: [
+      '/Gallery/Competition/CityofTmorrow/CP.avif',
       '/Gallery/Competition/CityofTmorrow/A1.avif',
       '/Gallery/Competition/CityofTmorrow/A2.avif',
       '/Gallery/Competition/CityofTmorrow/A3.avif',
       '/Gallery/Competition/CityofTmorrow/A4.avif',
       '/Gallery/Competition/CityofTmorrow/A5.avif',
-      '/Gallery/Competition/CityofTmorrow/A6.avif',
     ],
     detailContent: [
       {
@@ -791,15 +764,14 @@ export const competitionProjects: Project[] = [
     slug: 'virtual-home',
     title: 'VOXEL HOUSE',
     location: 'N/A',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Clyde Ong'],
     images: [
-      '/Gallery/Competition/VirtualHome/CP.avif',
-      '/Gallery/Competition/VirtualHome/A1.avif',
-      '/Gallery/Competition/VirtualHome/A2.avif',
-      '/Gallery/Competition/VirtualHome/A3.avif',
+      '/Gallery/Competition/Voxel/CP.avif',
+      '/Gallery/Competition/Voxel/A1.avif',
+      '/Gallery/Competition/Voxel/A2.avif',
+      '/Gallery/Competition/Voxel/A3.avif',
     ],
     detailContent: [
       {
@@ -835,7 +807,6 @@ export const competitionProjects: Project[] = [
     slug: 'klaf-2018',
     title: 'KLAF',
     location: 'N/A',
-    year: '2018',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -875,14 +846,12 @@ export const competitionProjects: Project[] = [
       },
     ],
   },
-
   // 23. Go Beyond
   {
     id: 23,
     slug: 'go-beyond',
     title: 'Go Beyond',
     location: 'N/A',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang'],
@@ -937,7 +906,6 @@ export const competitionProjects: Project[] = [
     slug: 'Architect-chair',
     title: 'Architect\'s Chair',
     location: 'N/A',
-    year: '2016',
     category: 'Competition',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn'],
@@ -951,5 +919,4 @@ export const competitionProjects: Project[] = [
       }
     ],
   },
-
 ];

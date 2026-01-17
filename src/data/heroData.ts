@@ -1,5 +1,3 @@
-import { getOptimizedVideo, getOptimizedImage, getProjectCover } from '../utils/cloudinary';
-
 interface HeroSection {
   id: number;
   slug: string;
@@ -13,11 +11,10 @@ interface HeroSection {
 export const heroSections = [
   {
     id: 1,
-    title: "Introverted House",
+    title: "Tropical Shift House",
     location: "Kuala Lumpur",
-    slug: "introvert-house",
-    // Just use the public ID (the part before .mp4)
-    img: getOptimizedVideo('IntrovertHouseCoverVideo_tcy2qb', 'hero'),
+    slug: "tropical-shift-house",
+    img: '/Gallery/Residential/TropicalShiftHouse/TropicalShiftHouse.mp4',
   },
   {
     id: 2,

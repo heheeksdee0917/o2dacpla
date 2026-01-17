@@ -20,7 +20,7 @@ export const newsItems: NewsItem[] = [
     title: "Post-Pandemic City of Tomorrow Featured on designboom",
     date: "2020-11-02",
     excerpt: "O2 Design Atelier's visionary concept for a post-pandemic city, featuring elevated self-sustaining towers above regenerated nature, is published on designboom.",
-    image: '/Gallery/Competition/CityofTmorrow/A1.avif',
+    image: '/Gallery/Competition/CityofTmorrow/CP.avif',
     slug: "postpandemiccity",
     content: [
       {

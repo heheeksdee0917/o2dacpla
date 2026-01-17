@@ -1,4 +1,3 @@
-import { getOptimizedImage } from '../utils/cloudinary';
 import type { Project } from './mockData';
 
 export const interiorProjects: Project[] = [
@@ -9,7 +8,6 @@ export const interiorProjects: Project[] = [
     slug: 'brownstone-residence',
     title: 'Brownstone Residence',
     location: 'Bukit Damansara, Kuala Lumpur',
-    year: '2022',
     category: 'Interior',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Kong Xiang Lynn', 'Lim Min Syn'],
@@ -28,14 +26,12 @@ export const interiorProjects: Project[] = [
       },
     ],
   },
-
   // 2. Cafe 100
   {
     id: 2,
     slug: 'cafe-100',
     title: 'Cafe 100',
     location: 'Taman Desa, Kuala Lumpur',
-    year: '2022',
     category: 'Interior',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Kong Xiang Lynn'],
@@ -63,7 +59,6 @@ export const interiorProjects: Project[] = [
     slug: 'dharma',
     title: 'Dharma',
     location: 'Taman Desa, Kuala Lumpur',
-    year: '2022',
     category: 'Interior',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Kong Xiang Lynn'],
@@ -94,7 +89,6 @@ export const interiorProjects: Project[] = [
     slug: 'quartz-id',
     title: 'Quartz ID',
     location: 'Taman Desa, Kuala Lumpur',
-    year: '2022',
     category: 'Interior',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Kong Xiang Lynn'],
@@ -124,7 +118,6 @@ export const interiorProjects: Project[] = [
     slug: 'sentul-works-id',
     title: 'Sentul Works',
     location: 'Taman Desa, Kuala Lumpur',
-    year: '2022',
     category: 'Interior',
     status: 'N/A',
     projectTeam: ['Edric Choo Poo Liang', 'Kong Xiang Lynn'],

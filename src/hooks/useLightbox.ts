@@ -15,6 +15,8 @@ interface UseLightboxReturn {
   goToPrevious: () => void;
   visibleThumbnails: { src: string; actualIndex: number }[];
   imageRef: React.RefObject<HTMLImageElement>;
+  showSwipeHint: boolean;
+  hideSwipeHint: () => void;
 }
 
 export function useLightbox(
@@ -24,6 +26,7 @@ export function useLightbox(
   const imageCount = images.length;
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
   const imageRef = useRef<HTMLImageElement>(null);
 
   // Safety: clamp index when images change
@@ -43,16 +46,20 @@ export function useLightbox(
 
   const closeLightbox = useCallback(() => setIsOpen(false), []);
 
+  const hideSwipeHint = useCallback(() => setShowSwipeHint(false), []);
+
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % imageCount);
+    setShowSwipeHint(false);
   }, [imageCount]);
 
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + imageCount) % imageCount);
+    setShowSwipeHint(false);
   }, [imageCount]);
 
   const visibleThumbnails = useMemo(() => {
-    const VISIBLE = 7;
+    const VISIBLE = 5;
     const CENTER = 3;
 
     if (imageCount <= VISIBLE) {
@@ -80,6 +87,18 @@ export function useLightbox(
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, options.enabled, closeLightbox, goToNext, goToPrevious]);
+
+  // Reset and auto-hide swipe hint when lightbox opens
+  useEffect(() => {
+    if (isOpen) {
+      setShowSwipeHint(true);
+      const timer = setTimeout(() => {
+        setShowSwipeHint(false);
+      }, 3000); // Hide after 3 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   // Click outside to close (anywhere except the image or buttons)
   useEffect(() => {
@@ -115,5 +134,7 @@ export function useLightbox(
     goToPrevious,
     visibleThumbnails,
     imageRef,
+    showSwipeHint,
+    hideSwipeHint,
   };
 }

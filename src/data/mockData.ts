@@ -43,7 +43,6 @@ export interface Project {
   slug: string;
   title: string;
   location: string;
-  year: string;
   category: 'Residential' | 'Commercial' | 'Housing' | 'Interior' | 'Competition'| 'Hospitality';
   images: string[];
   hero?: boolean;

@@ -5,6 +5,7 @@ import { projects } from '../data/mockData';
 import React from 'react';
 import { useLightbox } from '../hooks/useLightbox';
 import { useTouchGestures } from '../hooks/useTouchGestures';
+import LazyImage from '../components/LazyImage';
 
 export default function PortfolioDetails() {
   const { id } = useParams<{ id: string }>();
@@ -57,17 +58,35 @@ export default function PortfolioDetails() {
       p => p.category === project.category && p.slug !== project.slug
     );
 
-    // Use project ID as seed for consistent shuffle
-    const seededRandom = (seed: number) => {
-      const x = Math.sin(seed) * 10000;
-      return x - Math.floor(x);
-    };
+    // Find the index of the current project in the filtered list
+    const allInCategory = projects.filter(p => p.category === project.category);
+    const currentIndex = allInCategory.findIndex(p => p.slug === project.slug);
 
-    const shuffled = [...filtered].sort((a, b) =>
-      seededRandom(project.id + a.id) - seededRandom(project.id + b.id)
-    );
+    const result: typeof filtered = [];
 
-    return shuffled.slice(0, 3);
+    // Get neighbors: 1 before and 2 after (or adjust to fill 3 slots)
+    for (let offset = -1; offset <= 2 && result.length < 3; offset++) {
+      if (offset === 0) continue; // Skip the current project
+
+      const index = currentIndex + offset;
+      if (index >= 0 && index < allInCategory.length) {
+        const neighborProject = allInCategory[index];
+        if (neighborProject.slug !== project.slug) {
+          result.push(neighborProject);
+        }
+      }
+    }
+
+    // If we don't have 3 yet, fill with remaining projects
+    if (result.length < 3) {
+      for (const p of filtered) {
+        if (!result.find(r => r.id === p.id) && result.length < 3) {
+          result.push(p);
+        }
+      }
+    }
+
+    return result.slice(0, 3);
   }, [project?.id, project?.category]);
 
   // Check if content needs "Show More"
@@ -187,15 +206,16 @@ export default function PortfolioDetails() {
                 key={`mobile-${index}-${imageKey}`}
                 ref={(el) => (imageRefs.current[index] = el)}
                 onClick={() => openLightbox(index)}
-                className="relative flex-shrink-0 w-[80vw] bg-neutral-100 overflow-hidden cursor-pointer group snap-center "
+                className="relative flex-shrink-0 w-[80vw] bg-neutral-100 overflow-hidden cursor-pointer group snap-center"
                 style={{ height: 'calc(50vh - 3rem)' }}
                 aria-label={`View image ${index + 1} in lightbox`}
               >
-                <img
+                <LazyImage
                   src={image}
                   alt={`${project.title} ${index + 1}`}
-                  className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
-                  loading="eager"
+                  className="w-full h-full object-contain transition-opacity group-hover:opacity-90"
+                  priority={index < 3}
+                  loading={index < 3 ? "eager" : "lazy"}
                 />
               </button>
             ))}
@@ -212,14 +232,15 @@ export default function PortfolioDetails() {
                 key={`desktop-${index}-${imageKey}`}
                 ref={(el) => (imageRefs.current[index] = el)}
                 onClick={() => openLightbox(index)}
-                className="relative w-full bg-neutral-100 overflow-hidden cursor-pointer group block "
+                className="relative w-full bg-neutral-100 overflow-hidden cursor-pointer group block"
                 aria-label={`View image ${index + 1} in lightbox`}
               >
-                <img
+                <LazyImage
                   src={image}
                   alt={`${project.title} ${index + 1}`}
                   className="w-full h-auto object-cover transition-opacity group-hover:opacity-90"
-                  loading="eager"
+                  priority={index < 3}
+                  loading={index < 3 ? "eager" : "lazy"}
                 />
               </button>
             ))}
@@ -242,11 +263,6 @@ export default function PortfolioDetails() {
               <div className="flex items-baseline gap-2 border-b border-black/10 pb-3 md:pb-4">
                 <span className="text-xs md:text-sm text-neutral-500 min-w-[120px] md:min-w-[140px]">Status:</span>
                 <span className="text-sm md:text-base text-black">{project.status || 'Completed'}</span>
-              </div>
-
-              <div className="flex items-baseline gap-2 border-b border-black/10 pb-3 md:pb-4">
-                <span className="text-xs md:text-sm text-neutral-500 min-w-[120px] md:min-w-[140px]">Year:</span>
-                <span className="text-sm md:text-base text-black">{project.year}</span>
               </div>
 
               <div className="flex items-baseline gap-2 border-b border-black/10 pb-3 md:pb-4">
