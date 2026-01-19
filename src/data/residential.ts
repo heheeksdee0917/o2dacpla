@@ -831,6 +831,15 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/JNDHouse/A10.avif',
       '/Gallery/Residential/JNDHouse/A11.avif',
       '/Gallery/Residential/JNDHouse/A12.avif',
+      '/Gallery/Residential/JNDHouse/A13.avif',
+      '/Gallery/Residential/JNDHouse/A14.avif',
+      '/Gallery/Residential/JNDHouse/A15.avif',
+      '/Gallery/Residential/JNDHouse/A16.avif',
+      '/Gallery/Residential/JNDHouse/A17.avif',
+      '/Gallery/Residential/JNDHouse/A18.avif',
+      '/Gallery/Residential/JNDHouse/A19.avif',
+      '/Gallery/Residential/JNDHouse/A20.avif',
+      '/Gallery/Residential/JNDHouse/A21.avif',
     ],
     detailContent: [
       {
