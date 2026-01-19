@@ -14,7 +14,7 @@ export const heroSections = [
     title: "Tropical Shift House",
     location: "Kuala Lumpur",
     slug: "tropical-shift-house",
-    img: '/Gallery/Residential/TropicalShiftHouse/TropicalShiftHouse.mp4',
+    img: '/Gallery/Residential/TropicalShiftHouse/hero_video.mp4',
   },
   {
     id: 2,
