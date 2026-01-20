@@ -1027,7 +1027,7 @@ export const residentialProjects: Project[] = [
     status: 'Construction',
     projectTeam: ['Edric Choo Poo Liang', 'Nicole Hooi Yi Tien', 'Syazwan Amidun', 'Admirul'],
     images: [
-      '/Gallery/Residential/HouseJ/CP.avif',
+      '/Gallery/Residential/HouseJ/JonothanCP.avif',
       '/Gallery/Residential/HouseJ/1.avif',
       '/Gallery/Residential/HouseJ/2.avif',
       '/Gallery/Residential/HouseJ/3.avif',

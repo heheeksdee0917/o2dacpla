@@ -4,22 +4,29 @@ import LazyImage from '../components/LazyImage';
 import React, { useState, useEffect, useRef } from 'react';
 import { useInfiniteScroll } from '../components/ScrollLoad'; // ← Add this import
 
+// Sort news items by date (newest to oldest)
+const sortedNewsItems = [...newsItems].sort((a, b) => {
+  const dateA = a.date ? new Date(a.date) : new Date(0); // Fallback to very old date if empty
+  const dateB = b.date ? new Date(b.date) : new Date(0);
+  return dateB.getTime() - dateA.getTime(); // descending (newest first)
+});
+
 export default function News() {
   const [fadeIn, setFadeIn] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
-  // ← Add infinite scroll hook
+  // Use sorted items for infinite scroll
   const {
     displayedItems: displayedNews,
     isLoading,
     hasMore,
     observerTarget,
   } = useInfiniteScroll({
-    items: newsItems,
-    initialLoad: 9,  // Load 9 items initially (3 rows of 3 on desktop)
-    loadMoreCount: 6, // Load 6 more items when scrolling
-    enabled: true,    // Always enabled for news page
+    items: sortedNewsItems, // ← Use the sorted version
+    initialLoad: 9,         // Load 9 items initially (3 rows of 3 on desktop)
+    loadMoreCount: 6,       // Load 6 more items when scrolling
+    enabled: true,          // Always enabled for news page
   });
 
   useEffect(() => {
@@ -61,6 +68,7 @@ export default function News() {
 
   // Format date
   const formatDate = (dateString: string) => {
+    if (!dateString) return 'Date not available';
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
@@ -88,7 +96,7 @@ export default function News() {
             </p>
           </div>
 
-          {/* News Grid - Changed from newsItems to displayedNews */}
+          {/* News Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedNews.map((item, index) => (
               <Link
@@ -153,14 +161,14 @@ export default function News() {
           <div ref={observerTarget} className="h-4" />
 
           {/* End message */}
-          {!hasMore && newsItems.length > 0 && (
+          {!hasMore && sortedNewsItems.length > 0 && (
             <div className="text-center py-12 mt-8">
               <p className="text-sm font-light text-black/40">You've reached the end</p>
             </div>
           )}
 
           {/* Empty State */}
-          {newsItems.length === 0 && (
+          {sortedNewsItems.length === 0 && (
             <div className="text-center py-32">
               <p className="text-xl font-light text-black/30">No news to display</p>
             </div>

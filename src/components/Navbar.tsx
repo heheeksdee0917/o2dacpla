@@ -99,7 +99,7 @@ export default function Navbar() {
                   <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} ${isActive('/awards') ? 'w-full' : 'w-0 group-hover/link:w-full'}`}></span>
                 </Link>
                 <Link to="/news" className={`caption transition-all duration-300 ${textColor} relative group/link`}>
-                  News & Publication
+                  News
                   <span className={`absolute bottom-0 left-0 h-px transition-all duration-300 ease-out ${underlineColor} ${isActive('/news') ? 'w-full' : 'w-0 group-hover/link:w-full'}`}></span>
                 </Link>
 
@@ -161,7 +161,7 @@ export default function Navbar() {
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>Home</Link>
               <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/about') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>About</Link>
               <Link to="/awards" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/awards') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>Awards</Link>
-              <Link to="/news" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/news') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>News & Publication</Link>
+              <Link to="/news" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/news') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>News</Link>
               <div>
                 <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isPortfolioPage ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>Portfolio</Link>
                 <div className="mt-4 space-y-3">
