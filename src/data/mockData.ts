@@ -36,6 +36,10 @@ interface ContentBlock {
   heading?: string;
   imageSrc?: string;
   imageAlt?: string;
+  inlineLinks?: {
+    text: string; 
+    url: string;  
+  }[];
 }
 
 export interface Project {

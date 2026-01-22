@@ -280,31 +280,82 @@ export default function PortfolioDetails() {
                 className={`transition-all duration-500 ease-in-out ${!isExpanded && needsShowMore ? 'max-h-[600px] overflow-hidden' : ''
                   }`}
               >
-                {project.detailContent?.map((block, index) => (
-                  block.type === 'text' && (
-                    <div key={index} className="mb-6">
-                      {block.heading && (
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-light mb-4">
-                          {block.heading}
-                        </h2>
-                      )}
-                      {block.content && (
-                        <p className="text-sm md:text-base leading-relaxed text-neutral-700">
-                          {Array.isArray(block.content) ? (
-                            block.content.map((line, i) => (
-                              <React.Fragment key={i}>
-                                {line}
-                                {i < (Array.isArray(block.content) ? block.content.length : 0) - 1 && <br />}
-                              </React.Fragment>
-                            ))
-                          ) : (
-                            block.content
-                          )}
-                        </p>
-                      )}
-                    </div>
-                  )
-                ))}
+                {project.detailContent?.map((block, index) => {
+                  if (block.type === 'text') {
+                    const renderContent = () => {
+                      if (!block.content) return null;
+                      
+                      const contentText = Array.isArray(block.content) 
+                        ? block.content.join(' ')
+                        : block.content;
+                      
+                      // If there are multiple inline links
+                      if (block.inlineLinks && block.inlineLinks.length > 0) {
+                        const parts: (string | JSX.Element)[] = [];
+                        let remainingText = contentText;
+                        
+                        block.inlineLinks.forEach((link, linkIndex) => {
+                          const linkPosition = remainingText.indexOf(link.text);
+                          if (linkPosition !== -1) {
+                            // Add text before the link
+                            if (linkPosition > 0) {
+                              parts.push(remainingText.substring(0, linkPosition));
+                            }
+                            // Add the link
+                            parts.push(
+                              <a
+                                key={linkIndex}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline hover:text-black/70 transition-colors"
+                              >
+                                {link.text}
+                              </a>
+                            );
+                            // Update remaining text
+                            remainingText = remainingText.substring(linkPosition + link.text.length);
+                          }
+                        });
+                        
+                        // Add any remaining text
+                        if (remainingText) {
+                          parts.push(remainingText);
+                        }
+                        
+                        return <>{parts}</>;
+                      }
+                      
+                      // No inline links - render normally
+                      return Array.isArray(block.content) ? (
+                        block.content.map((line, i) => (
+                          <React.Fragment key={i}>
+                            {line}
+                            {i < (block.content as string[]).length - 1 && <br />}
+                          </React.Fragment>
+                        ))
+                      ) : (
+                        block.content
+                      );
+                    };
+
+                    return (
+                      <div key={index} className="mb-6">
+                        {block.heading && (
+                          <h2 className="text-xl md:text-2xl lg:text-3xl font-light mb-4">
+                            {block.heading}
+                          </h2>
+                        )}
+                        {block.content && (
+                          <p className="text-sm md:text-base leading-relaxed text-neutral-700">
+                            {renderContent()}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
               </div>
 
               {needsShowMore && !isExpanded && (

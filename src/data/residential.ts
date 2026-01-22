@@ -248,11 +248,6 @@ export const residentialProjects: Project[] = [
       {
         type: 'text',
         content:
-          'At the dead end of a Damansara cul-de-sac, two abutting lots behave like paired strata—one compacted into architecture, the other deliberately left unsealed. The client, a naturalist by temperament and practice, refused the usual total capture of land: one parcel is held as garden, a living field that stays porous to light, water, and time. On the adjacent plot, a disciplined mass of fair-faced concrete is lifted and aligned into a private residence for a family of six. The project begins as a double articulation: a block that codes and orders, and an adjoining ground that remains open to drift—an interstratum between built form and the site’s wider continuities.',
-      },
-      {
-        type: 'text',
-        content:
           'The bungalow is conceived as a compact rectilinear bar set against a larger, retained garden field. Rather than spreading across the site, the plan works by displacement and clearance: two volumes slide past each other and settle to one side, releasing a long edge of open ground for water, lawn, and trees. Out of this shift emerges an inhabitable seam—an overlap that is more sensed than seen. It pulls you from gate to entry, holds the long glance along the lap pool, and quietly tilts daily life toward the adjacent unbuilt lot.',
       },
       {
@@ -269,6 +264,21 @@ export const residentialProjects: Project[] = [
         type: 'text',
         content:
           'Rather than relying on a single motif, the project is calibrated as a field of cooperating elements—structure, screen, circulation, water, and planting—each tuned to amplify the other. The shift does its most precise work at the boundary between the built lot and the held garden: the house maintains a compact, disciplined edge, while the landscape is allowed to remain loose and thick—gravel clearings, young trees, and understorey growth forming an unprogrammed room outdoors. Paths and deck edges extend domestic life outward, softening thresholds between the built and unbuilt. The result is a residence that is larger than its footprint: a disciplined concrete frame set beside a living field, with an underlying motion quietly organising how the two are experienced as one.',
+      },
+      {
+        type: 'text',
+        content:
+          'See more on Facebook or Instagram',
+        inlineLinks: [
+          {
+            text: 'Facebook',
+            url: 'https://www.facebook.com/reel/1602967910899785'
+          },
+          {
+            text: 'Instagram',
+            url: 'https://www.instagram.com/p/DTnYiXaFFEM/'
+          },
+        ]
       },
     ],
   },
