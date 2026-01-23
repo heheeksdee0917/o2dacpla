@@ -210,7 +210,7 @@ export const residentialProjects: Project[] = [
     location: 'Desa Park City, Kuala Lumpur',
     category: 'Residential',
     status: 'Construction',
-    projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Wendy Woon', 'Danish Azhan Azham', 'Kadhiraven Samynathan'],
+    projectTeam: ['Edric Choo Poo Liang', 'Lim Min Syn', 'Wendy Woon', 'Danish Azhan', 'Kadhiraven Samynathan'],
     images: [
       '/Gallery/Residential/SeanHouse/CP.avif',
       '/Gallery/Residential/SeanHouse/A1.avif',
@@ -887,7 +887,7 @@ export const residentialProjects: Project[] = [
     location: 'Kuala Lumpur',
     category: 'Residential',
     status: 'Submission',
-    projectTeam: ['Edric Choo Poo Liang', 'Quek Yi Jane', 'Evans Khor', 'Danish Azhan Azham'],
+    projectTeam: ['Edric Choo Poo Liang', 'Quek Yi Jane', 'Evans Khor', 'Danish Azhan'],
     images: [
       '/Gallery/Residential/MelodyHouse/CP.avif',
       '/Gallery/Residential/MelodyHouse/A1.avif',
