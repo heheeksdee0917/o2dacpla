@@ -216,7 +216,6 @@ export const residentialProjects: Project[] = [
       '/Gallery/Residential/SeanHouse/A1.avif',
       '/Gallery/Residential/SeanHouse/A2.avif',
       '/Gallery/Residential/SeanHouse/A3.avif',
-      '/Gallery/Residential/SeanHouse/A4.avif',
     ],
     detailContent: [
       {

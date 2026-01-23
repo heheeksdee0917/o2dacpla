@@ -102,9 +102,11 @@ export default function LazyImage({
           src={src}
           alt={alt}
           sizes={sizes}
-          className={`w-full h-full object-cover transition-all duration-500 ${
-            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-          }`}
+          className="w-full h-full object-cover transition-all duration-500"
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transform: isLoaded ? 'scale(1)' : 'scale(1.05)',
+          }}
           onLoad={handleLoad}
           onError={handleError}
           loading={loading || (priority ? 'eager' : 'lazy')}
