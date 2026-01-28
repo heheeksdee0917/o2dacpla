@@ -40,10 +40,10 @@ export default function HeroSection() {
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for fade-in animations
+  // Intersection Observer for text animations
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.2,
+      threshold: 0.5, // Trigger when 50% of section is visible
       rootMargin: '0px'
     };
 
@@ -51,6 +51,8 @@ export default function HeroSection() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('section-visible');
+        } else {
+          entry.target.classList.remove('section-visible');
         }
       });
     }, observerOptions);
@@ -83,17 +85,18 @@ export default function HeroSection() {
 
       <div
         ref={containerRef}
-        className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
+        className="h-screen overflow-y-scroll scroll-smooth"
       >
         {heroSections.map((section, index) => (
           <div
             key={section.id}
             ref={(el) => (sectionRefs.current[index] = el)}
             data-theme="dark"
-            className="hero-section relative h-screen w-full overflow-hidden cursor-pointer snap-start snap-always bg-black opacity-0 transition-all duration-1000 ease-out"
+            className="hero-section sticky top-0 h-screen w-full overflow-hidden cursor-pointer bg-black"
+            style={{ zIndex: section.zIndex }}
             onClick={() => handleSectionClick(section.slug)}
           >
-            {/* Parallax Background with Scale Effect */}
+            {/* Background */}
             <div className="absolute inset-0 w-full h-full">
               {section.img.endsWith('.mp4') ? (
                 <video
@@ -108,13 +111,13 @@ export default function HeroSection() {
                 <img
                   src={section.img}
                   alt={section.title}
-                  className="w-full h-full object-cover zoom-reset"
+                  className="w-full h-full object-cover"
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             </div>
 
-            {/* Content with Staggered Animation */}
+            {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 pb-24 text-center z-10">
               <h2 className="text-white text-4xl md:text-5xl uppercase font-light mb-4 tracking-wider opacity-0 translate-y-8 transition-all duration-1000 delay-300 hero-title">
                 {section.title}
@@ -126,39 +129,17 @@ export default function HeroSection() {
           </div>
         ))}
 
-        <div data-theme="light" className="snap-start snap-always">
+        <div data-theme="light" className="relative" style={{ zIndex: 70 }}>
           <Footer />
         </div>
       </div>
 
       <style>{`
-        .hero-section.section-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
+        /* Text animation when section becomes visible */
         .hero-section.section-visible .hero-title,
         .hero-section.section-visible .hero-location {
           opacity: 1;
           transform: translateY(0);
-        }
-
-
-        @keyframes zoom-cycle {
-          0% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.15);
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
-
-        /* Trigger zoom only when section is visible */
-        .hero-section.section-visible .zoom-reset {
-          animation: zoom-cycle 20s ease-in-out forwards;
         }
 
         /* Hide scrollbar but keep functionality */
@@ -166,17 +147,12 @@ export default function HeroSection() {
           width: 0px;
           background: transparent;
         }
-        
 
         /* Reduced motion support for accessibility */
         @media (prefers-reduced-motion: reduce) {
-          .hero-section,
           .hero-title,
-          .hero-location,
-          img,
-          video {
+          .hero-location {
             transition: none !important;
-            animation: none !important;
           }
           
           .scroll-smooth {

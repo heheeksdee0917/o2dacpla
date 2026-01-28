@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const categories = ['Residential', 'Housing', 'Commercial', 'Hospitality', 'Interior', 'Competition'];
 
-  // Contact details (update with real ones when ready)
+  // Contact details
   const phone = '+603 6420 6345';
   const email = 'tbc@o2dacpla.com';
   const address = `No 9-1, Block A, Zenith Corporate Park, Jalan SS7/26, Kelana Jaya, 47301 Petaling Jaya, Selangor Darul Ehsan, Malaysia`;
@@ -23,7 +23,7 @@ export default function Navbar() {
   const encodedAddress = encodeURIComponent(address);
   const mapsUrl = `geo:0,0?q=${encodedAddress}`;
 
-  // Background detection (unchanged)
+  // Background detection
   useEffect(() => {
     const checkBackground = () => {
       if (!navRef.current) return;
@@ -62,10 +62,15 @@ export default function Navbar() {
     };
 
     checkBackground();
-    window.addEventListener('scroll', checkBackground, { passive: true });
+    const handleScroll = () => {
+      requestAnimationFrame(checkBackground);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', checkBackground);
+    
     return () => {
-      window.removeEventListener('scroll', checkBackground);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', checkBackground);
     };
   }, [location.pathname]);
@@ -75,7 +80,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50">
+      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-[100]">
         <div className="transition-all duration-500 backdrop-blur-xl bg-white/10 border-b border-white/20">
           <div className="max-w-[1800px] mx-auto px-12 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-12">
@@ -129,33 +134,39 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Button - toggles open/close */}
+      {/* Mobile Menu Button - with glass effect */}
       <button
         onClick={() => setIsMobileMenuOpen(prev => !prev)}
-        className={`md:hidden fixed bottom-6 left-6 z-[60] px-3 py-2 border border-black transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 ${isMobileMenuOpen ? 'bg-black' : 'bg-white'}`}
+        className="md:hidden fixed bottom-6 left-6 z-[90] px-3 py-2 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-xl bg-white/10 border border-white/20"
       >
-        {isMobileMenuOpen ? <X size={20} className="text-white" /> : <Menu size={20} className="text-black" />}
-        {isMobileMenuOpen && <span className="text-sm font-medium text-white">Close</span>}
+        {isMobileMenuOpen ? (
+          <>
+            <X size={20} className="text-black" />
+            <span className="text-sm font-medium text-black">Close</span>
+          </>
+        ) : (
+          <Menu size={20} className={textColor} />
+        )}
       </button>
 
-      {/* Mobile Contact Button - now toggles exactly like the menu button */}
+      {/* Mobile Contact Button - with glass effect */}
       <button
         onClick={() => setIsContactOpen(prev => !prev)}
-        className={`md:hidden fixed bottom-6 right-6 z-[60] px-5 py-1.5 border border-black transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 ${isContactOpen ? 'bg-black' : 'bg-white'}`}
+        className="md:hidden fixed bottom-6 right-6 z-[90] px-5 py-1.5 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-xl bg-white/10 border border-white/20"
       >
         {isContactOpen ? (
           <>
-            <X size={20} className="text-white" />
-            <span className="text-sm font-medium text-white">Close</span>
+            <X size={20} className="text-black" />
+            <span className="text-sm font-medium text-black">Close</span>
           </>
         ) : (
-          <span className="text-sm font-medium text-black">Contact</span>
+          <span className={`text-sm font-medium ${textColor}`}>Contact</span>
         )}
       </button>
 
       {/* Mobile Menu Overlay - click outside to close */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-50" onClick={() => setIsMobileMenuOpen(false)}>
+        <div className="md:hidden fixed inset-0 bg-white z-[95]" onClick={() => setIsMobileMenuOpen(false)}>
           <div className="h-full w-full flex items-center justify-center px-8" onClick={(e) => e.stopPropagation()}>
             <nav className="space-y-8 text-center">
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`block text-2xl ${isActive('/') ? 'text-black font-medium' : 'text-black/70 hover:text-black'}`}>Home</Link>
@@ -179,7 +190,7 @@ export default function Navbar() {
 
       {/* Mobile Contact Overlay - same close behavior as menu */}
       {isContactOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-50" onClick={() => setIsContactOpen(false)}>
+        <div className="md:hidden fixed inset-0 bg-white z-[95]" onClick={() => setIsContactOpen(false)}>
           <div className="h-full w-full flex items-center justify-center px-8" onClick={(e) => e.stopPropagation()}>
             <div className="text-center">
               <div className="text-3xl font-medium mb-16" style={{ fontFamily: "'Gill Sans', system-ui, -apple-system, sans-serif" }}>

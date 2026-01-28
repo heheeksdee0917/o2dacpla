@@ -1,6 +1,34 @@
 import type { Project } from './mockData';
 
 export const commercialProjects: Project[] = [
+  //Community Centre
+  {
+    id: 11,
+    slug: 'community-centre',
+    title: 'Community Center @ Tmn Desa',
+    location: 'Kuala Lumpur',
+    category: 'Commercial',
+    status: 'Proposal',
+    projectTeam: ['Edric Choo Poo Liang'],
+    images: [
+      '/Gallery/Commercial/CommunityCenter/CP.avif',
+      '/Gallery/Commercial/CommunityCenter/A1.avif',
+      '/Gallery/Commercial/CommunityCenter/A2.avif',
+      '/Gallery/Commercial/CommunityCenter/A3.avif',
+      '/Gallery/Commercial/CommunityCenter/A4.avif',
+      '/Gallery/Commercial/CommunityCenter/A5.avif',
+      '/Gallery/Commercial/CommunityCenter/A6.avif',
+      '/Gallery/Commercial/CommunityCenter/A7.avif',
+      '/Gallery/Commercial/CommunityCenter/A8.avif',
+      '/Gallery/Commercial/CommunityCenter/A9.avif',
+    ],
+    detailContent: [
+      {
+        type: 'text',
+        content: 'Warehouse 3 is one of the few warehouses existing within the extended park setting of Sentul Park in Sentul West, Kuala Lumpur, Malaysia where the Federated Malay State Railway (FMSR) rail complexes were established in 1904. The warehouse is restored and modified into an event space that hosts banquets and gatherings. All the little pieces of nostalgia within the park restores a certain history of the city. When appropriating these paraphernalia for modern use, a fragment of the past is extracted and bottled. A trace note anchoring our culture whilst the society boldly march forward.'
+      },
+    ],
+  },
   // 1. Sentul Works
   {
     id: 1,
@@ -62,7 +90,6 @@ export const commercialProjects: Project[] = [
       },
     ],
   },
-
   // 2. Warehouse 3
   {
     id: 2,
@@ -179,13 +206,22 @@ export const commercialProjects: Project[] = [
     title: 'THC Warehouse @ Rawang',
     location: 'Rawang, Selangor',
     category: 'Commercial',
-    status: 'tbc',
-    projectTeam: ['Edric Choo Poo Liang'],
+    status: 'Submission',
+    projectTeam: ['Edric Choo Poo Liang','Lim Min Syn'],
     images: [
-      '/O2_Logo.avif'
+      '/Gallery/Commercial/THCWareHouse/CP.avif',
+      '/Gallery/Commercial/THCWareHouse/A1.avif',
+      '/Gallery/Commercial/THCWareHouse/A2.avif',
+      '/Gallery/Commercial/THCWareHouse/A3.avif',
+      '/Gallery/Commercial/THCWareHouse/A4.avif',
+      '/Gallery/Commercial/THCWareHouse/A5.avif',
     ],
     detailContent: [
-      { type: 'text', content: 'tbc' },
+      { type: 'text', content: 'THC Warehouse sits within a working industrial corridor where buildings are typically read as neutral containers—large roofs, hardstand yards, and service roads that privilege throughput over identity. The site’s defining constraint is its fall in level: a sloped ground plane that could easily fragment operations into disconnected pads. Rather than resist this condition, the project uses it as a quiet organiser, turning topography into a legible logistics landscape and giving the facility a clear, civic-like front without departing from its industrial discipline.' },
+      { type: 'text', content: 'The scheme is conceived as a pair of calibrated volumes—two broad-span halls set to either side of a central service spine. Their faceted metal envelopes and dark plinths articulate a simple hierarchy: a robust base for impact, movement, and maintenance, and a lighter upper skin that reads as a continuous shed roof folded into crisp edges. This twin-hall composition enables separation of programmes (production, storage, staging) while maintaining operational clarity. Above the yard, a cantilevered observation room is carved into the façade as a controlled aperture—an architectural instrument for oversight that also breaks the scale of the long elevation.' },
+      { type: 'text', content: 'Arrival is framed by the two halls, which form a sheltered forecourt and a clear line of sight into the heart of the compound. The central drive rises gently, aligning vehicles to loading bays and staging zones with minimal turning conflict. Along the flanks, continuous canopies and recessed docks create a repeatable rhythm for servicing, while perimeter planting buffers the hardstand and softens long views across the site.' },
+      { type: 'text', content: 'Inside, the experience shifts from enclosure to volume: a high truss roof lifts the ceiling plane into a single, expansive room, deliberately unobstructed to support changing machinery layouts and flexible assembly lines. Strip skylights introduce a measured daylight wash, and high-volume fans temper the air without compromising the clarity of the structure. Dedicated zones—such as the machine area—are held as legible fields within the larger hall, allowing the floor plate to be read as an adaptable working surface rather than a fixed diagram.' },
+      { type: 'text', content: 'THC Warehouse treats efficiency as an architectural ethic: simple massing, clear circulation, and long-span space are shaped into a facility that is direct, resilient, and easy to operate. The result is an industrial complex that performs as infrastructure, yet carries a composed identity—defined by its paired volumes, disciplined detailing, and a spatial order that turns a sloped site into a coherent working campus.' },
     ],
   },
   // 7. UNO Rivertree Signature (Bukit Raja)
@@ -257,7 +293,6 @@ export const commercialProjects: Project[] = [
       { type: 'text', content: 'This high-rise composition is defined by two slender towers articulated with staggered balconies and deep frames, giving the façade a rhythmic, almost pixelated texture. Mid-level sky bridges stitch the towers together, creating shared vantage points while accentuating the vertical void between them. At the base, a multi-storey podium wrapped in continuous planted terraces forms a green plinth that softens the scale of the development and anchors it to the streetscape. The interplay of greenery, structural clarity, and sculpted massing produces a contemporary urban silhouette—one that balances density with permeability, and height with moments of elevated communal space.' },
     ],
   },
-
   // 10. Hilltop
   {
     id: 10,
