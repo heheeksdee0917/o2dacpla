@@ -8,7 +8,7 @@ export const commercialProjects: Project[] = [
     title: 'Community Center @ Tmn Desa',
     location: 'Kuala Lumpur',
     category: 'Commercial',
-    status: 'Proposal',
+    status: 'Submission',
     projectTeam: ['Edric Choo Poo Liang'],
     images: [
       '/Gallery/Commercial/CommunityCenter/CP.avif',
@@ -25,7 +25,19 @@ export const commercialProjects: Project[] = [
     detailContent: [
       {
         type: 'text',
-        content: 'Warehouse 3 is one of the few warehouses existing within the extended park setting of Sentul Park in Sentul West, Kuala Lumpur, Malaysia where the Federated Malay State Railway (FMSR) rail complexes were established in 1904. The warehouse is restored and modified into an event space that hosts banquets and gatherings. All the little pieces of nostalgia within the park restores a certain history of the city. When appropriating these paraphernalia for modern use, a fragment of the past is extracted and bottled. A trace note anchoring our culture whilst the society boldly march forward.'
+        content: 'Set within a broad municipal field, Taman Desa Community Hall is conceived as a shared room for the neighbourhood. The site is read less as a street edge than as an open commons: a lawn edged by trees, crossed by simple paths, and complemented by adjacent covered courts. In this setting, the hall must operate as both destination and backdrop, offering shelter for informal waiting and socialising, and an interior that can absorb the density of weddings, cultural celebrations, and community assemblies. Rather than compete with the openness of the field, the building gives it an address—an inhabitable edge of shade, threshold, and gathering.'
+      },
+      {
+        type: 'text',
+        content: 'The architecture breaks the massing into a sequence of folded white planes—thick “pages” that tilt and separate to produce a recognisable silhouette while behaving as climatic devices. Between these folds, narrow vertical slots admit controlled daylight and break the long elevations into shaded intervals. Deep roof edges and continuous eaves extend the protective perimeter, keeping circulation usable during downpours and tempering glare in midday sun. A timber-lined entry volume is inserted as a warmer counterpoint, turning the façade into a civic proscenium, where the hall’s identity is articulated through an abstracted Chinese register: an inclined signboard, layered timber screens, and a lifted eave line align into a legible ceremonial frontage.'
+      },
+      {
+        type: 'text',
+        content: 'Approach is deliberately legible. Paths converge toward a shaded forecourt beneath the extended eave, where crowds can gather, queue, and spill outward before and after events. The timber portal compresses the threshold, then releases into a tall, column-free interior—scaled for collective occupation rather than fixed seating. A robust ceiling grid, high-level openings, and clear floor geometry allow the room to shift quickly between badminton games, banquet settings, community briefings, and festive performances. A stage anchors one end as a constant point of orientation, while service bands and side stairs are consolidated to keep the hall clear, adaptable, and straightforward to manage during large events.'
+      },
+      {
+        type: 'text',
+        content: 'Taman Desa Community Hall treats architecture as an infrastructure of togetherness. Through disciplined massing, deep shade, and a calibrated sequence from field to veranda to hall, it offers a quiet, durable venue—one that supports the intensity of celebration days and the steady cadence of everyday community use without relying on spectacle.'
       },
     ],
   },

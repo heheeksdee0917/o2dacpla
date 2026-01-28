@@ -102,14 +102,11 @@ export const interiorProjects: Project[] = [
       '/Gallery/Interior/QuartzID/A6.avif',
     ],
     detailContent: [
-      {
-        type: 'text',
-        content: 'The interiors of Quartz Residence translate the tower’s crystalline, sculptural architecture into calm, refined living spaces. Tall glazing anchors each unit to sweeping valley views, while clean planes of stone, timber, and metal echo the tower’s angular geometry in a softer, more habitable form.'
-      },
-      {
-        type: 'text',
-        content: 'Curved staircases, layered wall panels, and linear lighting introduce fluidity within the otherwise precise spatial framework. Master suites open to lush terrace gardens, extending the tower’s elevated landscape directly into the home. Across all unit types, the design language remains consistent: disciplined geometry, quiet luxury, and a seamless dialogue between bold architecture and serene interiors.'
-      },
+      { type: 'text', content: 'Quartz occupies a difficult but familiar condition in Cheras: a large parcel read primarily at speed, framed by main highways and a surrounding fabric of incremental urban blocks. In this context, the project treats the podium not as a closed retail plinth, but as a new piece of civic ground—an inhabited terrain that can slow the site down, gather people, and give the towers a legible base beyond image-making.' },
+      { type: 'text', content: 'The concept begins with a deliberate inversion. Rather than letting the mall dominate the street edge, the retail volume is lifted and hollowed to release a generous public plaza beneath—an urban “crater” that becomes the project’s primary address. From this void, a network of plaza streets is cut through the massing, establishing clear pedestrian desire lines and a principal axis oriented toward the city’s skyline. Above, the towers rise as a ring of crystalline shards: their outward faces are clean and glossy, while the inward faces thicken and roughen, as if the development has been carved from a single mineral body—polished at the perimeter, cavernous within. This duality is reinforced materially: a cutting-edge external envelope frames the skyline, while the interior condition hints at rustic, masonry-like depth.' },
+      { type: 'text', content: 'The spatial sequence follows the same logic of compression and release. Arrival from the highway is choreographed into a calmer, enlarged threshold where the ground plane opens into the main plaza. Retail drop-off occurs at a faceted, gold-toned crystalline portal set behind a veil-like white screen, turning the act of entry into a moment of spectacle while maintaining climatic shade and visual porosity. Separate hotel and residential arrivals are expressed as their own “crystal rooms”—glazed, angular volumes held beneath a lifted soffit—so the mixed-use programme reads as a set of distinct lobbies stitched to a shared public ground.' },
+      { type: 'text', content: 'Vertical life is organised as a gradient of community. Green terraces are carved from the tower façades as habitable voids—pockets for planting, outdoor rooms, and relief within the high-rise section. At the upper levels, bridges extend between towers as infrastructural gardens, creating elevated shortcuts and shared amenities in the sky. This culminates in a ring-shaped promenade and sky pool, a suspended horizon that gathers the project’s residents into a single, continuous landscape above the city.' },
+      { type: 'text', content: 'Quartz therefore positions density as an experiential terrain: a development shaped as much by the public void it gives back as by the height it claims—crystalline in silhouette, but grounded in a clear sequence of streets, thresholds, gardens, and shared civic space.' },
     ],
   },
    // 5. Sentul Works
