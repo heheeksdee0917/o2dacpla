@@ -120,13 +120,13 @@ export default function About() {
 
             <div ref={teamRef}>
               <h2 className="text-center mb-20 text-3xl font-light">Team</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
                 {teamMembers.map((member) => (
                   <div key={member.id} className="team-member relative group overflow-hidden">
                     <LazyImage
                       src={member.image}
                       alt={member.name}
-                      className="w-full aspect-[9/16] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full aspect-[9/16] object-cover  transition-all duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 20vw"
                     />
                     {/* Overlay - name and role always visible, bio fades in on hover */}
