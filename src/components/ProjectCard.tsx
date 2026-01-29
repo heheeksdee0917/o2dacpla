@@ -5,9 +5,15 @@ import React from 'react';
 
 interface ProjectCardProps {
   project: Project;
+  batchLoad?: boolean;   // Enable batch loading
+  batchIndex?: number;   // Position in the grid
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ 
+  project, 
+  batchLoad = true,      // Default to batch loading enabled
+  batchIndex = 0 
+}: ProjectCardProps) {
   return (
     <Link
       to={`/portfolio/${project.slug}`}
@@ -20,7 +26,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             alt={project.title}
             className="w-full h-full object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            loading="lazy"
+            batchLoad={batchLoad}      // ✅ Pass batch loading flag
+            batchIndex={batchIndex}    // ✅ Pass position for batch calculation
           />
         </div>
 

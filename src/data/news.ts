@@ -43,7 +43,7 @@ export const newsItems: NewsItem[] = [
     title: "Courtyard House Ranked in ArchDaily Top 100 Projects",
     date: "2020-11-01",
     excerpt: "The Courtyard House secures No. 9 spot in ArchDaily's weekly Top 100 Projects.",
-    image: '',
+    image: '/Publications/Top100.avif',
     slug: "courtyardhousearchdailytop100",
     content: [
       {
@@ -149,7 +149,7 @@ export const newsItems: NewsItem[] = [
     title: "O2 Design Atelier Wins BUILD Award 2019",
     date: "2019-01-01",
     excerpt: "O2DA recognised as Best Contemporary Residential Architecture Studio 2019 - Malaysia by BUILD Magazine.",
-    image: "/images/news/o2dabuildaward2019.jpg",
+    image: "/Publications/BuildAward.avif",
     slug: "o2dabuildaward2019",
     content: [
       {

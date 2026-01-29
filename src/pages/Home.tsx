@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { heroSections } from '../data/heroData';
 import Footer from '../components/Footer';
 import React, { useState, useEffect, useRef } from 'react';
+import LazyImage from '../components/LazyImage';
 
 export default function HeroSection() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function HeroSection() {
   // Intersection Observer for text animations
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.5, // Trigger when 50% of section is visible
+      threshold: 0.5,
       rootMargin: '0px'
     };
 
@@ -87,47 +88,66 @@ export default function HeroSection() {
         ref={containerRef}
         className="h-screen overflow-y-scroll scroll-smooth"
       >
-        {heroSections.map((section, index) => (
-          <div
-            key={section.id}
-            ref={(el) => (sectionRefs.current[index] = el)}
-            data-theme="dark"
-            className="hero-section sticky top-0 h-screen w-full overflow-hidden cursor-pointer bg-black"
-            style={{ zIndex: section.zIndex }}
-            onClick={() => handleSectionClick(section.slug)}
-          >
-            {/* Background */}
-            <div className="absolute inset-0 w-full h-full">
-              {section.img.endsWith('.mp4') ? (
-                <video
-                  src={section.img}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <img
-                  src={section.img}
-                  alt={section.title}
-                  className="w-full h-full object-cover"
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            </div>
+        {heroSections.map((section, index) => {
+          // First 3 sections load immediately (priority), rest lazy load
+          const isPriority = index < 3;
+          const isVideo = section.img.endsWith('.mp4');
+          const isLastSection = index === heroSections.length - 1;
 
-            {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 pb-24 text-center z-10">
-              <h2 className="text-white text-4xl md:text-5xl uppercase font-light mb-4 tracking-wider opacity-0 translate-y-8 transition-all duration-1000 delay-300 hero-title">
-                {section.title}
-              </h2>
-              <p className="text-white/70 text-lg md:text-1xl font-light tracking-widest opacity-0 translate-y-8 transition-all duration-1000 delay-500 hero-location">
-                {section.location}
-              </p>
-            </div>
-          </div>
-        ))}
+          return (
+            <React.Fragment key={section.id}>
+              <div
+                ref={(el) => (sectionRefs.current[index] = el)}
+                data-theme="dark"
+                className="hero-section sticky top-0 h-screen w-full overflow-hidden cursor-pointer bg-black"
+                style={{ zIndex: section.zIndex }}
+                onClick={() => handleSectionClick(section.slug)}
+              >
+                {/* Background - with LazyImage for images, native for videos */}
+                <div className="absolute inset-0 w-full h-full">
+                  {isVideo ? (
+                    // Videos always load (can't lazy load videos easily)
+                    <>
+                      <video
+                        src={section.img}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    </>
+                  ) : (
+                    // Images use LazyImage component
+                    <>
+                      <LazyImage
+                        src={section.img}
+                        alt={section.title}
+                        className="w-full h-full"
+                        priority={isPriority}
+                        loading={isPriority ? 'eager' : 'lazy'}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    </>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 pb-24 text-center z-10">
+                  <h2 className="text-white text-4xl md:text-5xl uppercase font-light mb-4 tracking-wider opacity-0 translate-y-8 transition-all duration-1000 delay-300 hero-title">
+                    {section.title}
+                  </h2>
+                  <p className="text-white/70 text-lg md:text-xl font-light tracking-widest opacity-0 translate-y-8 transition-all duration-1000 delay-500 hero-location">
+                    {section.location}
+                  </p>
+                </div>
+              </div>
+
+              {!isLastSection && <div className="h-64 md:h-128 bg-black"></div>}
+            </React.Fragment>
+          );
+        })}
 
         <div data-theme="light" className="relative" style={{ zIndex: 70 }}>
           <Footer />

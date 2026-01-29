@@ -58,7 +58,7 @@ export default function NewsDetails() {
       </Link>
 
       {/* Hero Image */}
-      <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-neutral-100">
+      <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-neutral-100 pt-14">
         <LazyImage
           src={newsItem.image}
           alt={newsItem.title}

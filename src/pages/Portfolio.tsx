@@ -46,7 +46,6 @@ export default function Portfolio() {
     
     // Update URL with new category
     if (category === 'All') {
-      // Remove category param for 'All' to keep URL clean
       setSearchParams({});
     } else {
       setSearchParams({ category });
@@ -103,10 +102,15 @@ export default function Portfolio() {
                   {category}
                 </h2>
                 
-                {/* Category Grid */}
+                {/* Category Grid - No manual priority needed! */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
-                  {categoryProjects.map(project => (
-                    <ProjectCard key={project.id} project={project} />
+                  {categoryProjects.map((project, projectIndex) => (
+                    <ProjectCard 
+                      key={project.id} 
+                      project={project}
+                      batchLoad={true}
+                      batchIndex={projectIndex}
+                    />
                   ))}
                 </div>
               </div>
@@ -125,9 +129,15 @@ export default function Portfolio() {
               {filter}
             </h2>
             
+            {/* Grid - No manual priority needed! */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
-              {displayedProjects.map(project => (
-                <ProjectCard key={project.id} project={project} />
+              {displayedProjects.map((project, index) => (
+                <ProjectCard 
+                  key={project.id} 
+                  project={project}
+                  batchLoad={true}
+                  batchIndex={index}
+                />
               ))}
             </div>
           </div>

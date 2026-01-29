@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation, useParams } from 'react-router-dom';
-import { useLayoutEffect, lazy, Suspense } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,21 +12,27 @@ const NewsDetails = lazy(() => import('./pages/NewsDetails'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PortfolioDetails = lazy(() => import('./pages/PortfolioDetails'));
 
-// ScrollToTop – smooth but instant on route change
-function ScrollToTop() {
+// Force content re-render on route change with key prop
+function ContentRefresher() {
   const { pathname } = useLocation();
+  const [refreshKey, setRefreshKey] = React.useState(0);
+  const isFirstRender = useRef(true);
 
-  useLayoutEffect(() => {
-    // Force instant scroll to top without smooth behavior flicker
-    document.documentElement.style.scrollBehavior = 'auto';
+  useEffect(() => {
+    // Skip on first render
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    // Scroll to top instantly
     window.scrollTo(0, 0);
-    // Restore smooth scrolling after paint
-    requestAnimationFrame(() => {
-      document.documentElement.style.scrollBehavior = '';
-    });
+    
+    // Force re-render of content
+    setRefreshKey(prev => prev + 1);
   }, [pathname]);
 
-  return null;
+  return refreshKey;
 }
 
 // Wrapper to force remount PortfolioDetails on :id change
@@ -45,7 +51,12 @@ function NewsDetailsWithRemount() {
 function LoadingFallback() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-neutral-300 border-t-neutral-600 rounded-full animate-spin" />
+      <div className="relative flex items-center justify-center w-16 h-16">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-lime-400/20 animate-ping" />
+        </div>
+        <span className="relative z-10 text-xs font-medium text-neutral-600">Loading</span>
+      </div>
     </div>
   );
 }
@@ -53,60 +64,64 @@ function LoadingFallback() {
 function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const refreshKey = ContentRefresher();
 
   return (
-    <div className={isHomePage ? '' : 'min-h-screen'}>
+    <>
+      {/* Navbar stays mounted - never refreshes */}
       <Navbar />
       
-      <Routes>
-        <Route path="/" element={<Home />} />
+      {/* Content area with key - forces remount on navigation */}
+      <div key={refreshKey} className={isHomePage ? '' : 'min-h-screen'}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          <Route path="/about" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <About />
+            </Suspense>
+          } />
+          
+          <Route path="/awards" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <Awards />
+            </Suspense>
+          } />
+          
+          <Route path="/news" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <News />
+            </Suspense>
+          } />
+          
+          <Route path="/news/:slug" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <NewsDetailsWithRemount />
+            </Suspense>
+          } />
+          
+          <Route path="/portfolio" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <Portfolio />
+            </Suspense>
+          } />
+          
+          <Route path="/portfolio/:id" element={
+            <Suspense fallback={<LoadingFallback />}>
+              <PortfolioDetailsWithRemount />
+            </Suspense>
+          } />
+        </Routes>
         
-        <Route path="/about" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <About />
-          </Suspense>
-        } />
-        
-        <Route path="/awards" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <Awards />
-          </Suspense>
-        } />
-        
-        <Route path="/news" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <News />
-          </Suspense>
-        } />
-        
-        <Route path="/news/:slug" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <NewsDetailsWithRemount />
-          </Suspense>
-        } />
-        
-        <Route path="/portfolio" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <Portfolio />
-          </Suspense>
-        } />
-        
-        <Route path="/portfolio/:id" element={
-          <Suspense fallback={<LoadingFallback />}>
-            <PortfolioDetailsWithRemount />
-          </Suspense>
-        } />
-      </Routes>
-      
-      {!isHomePage && <Footer />}
-    </div>
+        {!isHomePage && <Footer />}
+      </div>
+    </>
   );
 }
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <AppContent />
     </Router>
   );

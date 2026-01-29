@@ -110,9 +110,9 @@ export const commercialProjects: Project[] = [
     location: 'Sentul, Kuala Lumpur',
     category: 'Commercial',
     status: 'Completed',
-    projectTeam: ['Edric Choo Poo Liang'],
+    projectTeam: ['Edric Choo Poo Liang','Lim Min Syn'],
     images: [
-      '/Gallery/Commercial/Warehouse3/CP.avif',
+      '/Gallery/Commercial/Warehouse3/ACP.avif',
       '/Gallery/Commercial/Warehouse3/A1.avif',
       '/Gallery/Commercial/Warehouse3/A2.avif',
       '/Gallery/Commercial/Warehouse3/A3.avif',
@@ -130,11 +130,11 @@ export const commercialProjects: Project[] = [
   {
     id: 3,
     slug: 'kfc-ijok',
-    title: 'KFC Ijok',
-    location: 'Ijok',
+    title: 'KFC @ Ijok',
+    location: 'Selangor',
     category: 'Commercial',
-    status: 'tbc',
-    projectTeam: ['Edric Choo Poo Liang'],
+    status: 'Submission',
+    projectTeam: ['Edric Choo Poo Liang','Lim Min Syn'],
     images: [
       '/Gallery/Commercial/KFCIjok/CP.avif',
       '/Gallery/Commercial/KFCIjok/A1.avif',
@@ -142,7 +142,10 @@ export const commercialProjects: Project[] = [
       '/Gallery/Commercial/KFCIjok/A3.avif'
     ],
     detailContent: [
-      { type: 'text', content: 'tbc' },
+      { type: 'text', content: 'The KFC design language echoes the rest of commercial retail design, using retrospective architectural lines and geometry that remind Malaysians of the past Art Deco and Modernist style architecture in the early 20th century. The spirit of that era also marks the exploration of aerodynamics in post-war automobile design, as well as resonating with the iconic American Art Deco-styled fast food chain drive-thru and diner culture. The mass of the building is conceived visually as a cabin ‘lifted’ from the ground with accentuation of KFC’s iconic red colour highlighting the elements like the roof canopy and window coping. A giant scaled-up KFC Chicken Bucket graces visitors at the top of the main entrance, functioning as a lit-up KFC advertisement mounting surface that forms the landmark beacon for the township.' },
+      { type: 'text', content: 'The design of the interior is an extension of the exterior concept mixing Art Deco, and Modernist style language but executed with contemporary material and technique. KFC customers can find retro café car seat style dining and classic mid-century Art Deco arches detailing in the interior.' },
+      { type: 'text', content: 'Customers will be greeted by a giant KFC Bucket from the foyer at the main entrance. Some of the dining area seating is part of a concrete façade curved-shaped bay window ledge. The form of the curved window ledge from the exterior gives the overall building a floating retro ‘lifted cabin’ effect.' },
+      { type: 'text', content: 'The overall architectural design and the big KFC bucket are iconic design statements that attract people’s attention hopefully from all over Klang Valley and beyond. We hope this KFC and Drive-thru not just provide F&B services but also an ‘Instagram able’ destination where people love to visit, gather, and share their experience of their time spent here.' },
     ],
   },
   // 4. Drive-thru KFC Bukit Raja
@@ -221,12 +224,12 @@ export const commercialProjects: Project[] = [
     status: 'Submission',
     projectTeam: ['Edric Choo Poo Liang','Lim Min Syn'],
     images: [
-      '/Gallery/Commercial/THCWareHouse/CP.avif',
-      '/Gallery/Commercial/THCWareHouse/A1.avif',
-      '/Gallery/Commercial/THCWareHouse/A2.avif',
-      '/Gallery/Commercial/THCWareHouse/A3.avif',
-      '/Gallery/Commercial/THCWareHouse/A4.avif',
-      '/Gallery/Commercial/THCWareHouse/A5.avif',
+      '/Gallery/Commercial/THCWarehouse/CP.avif',
+      '/Gallery/Commercial/THCWarehouse/A1.avif',
+      '/Gallery/Commercial/THCWarehouse/A2.avif',
+      '/Gallery/Commercial/THCWarehouse/A3.avif',
+      '/Gallery/Commercial/THCWarehouse/A4.avif',
+      '/Gallery/Commercial/THCWarehouse/A5.avif',
     ],
     detailContent: [
       { type: 'text', content: 'THC Warehouse sits within a working industrial corridor where buildings are typically read as neutral containers—large roofs, hardstand yards, and service roads that privilege throughput over identity. The site’s defining constraint is its fall in level: a sloped ground plane that could easily fragment operations into disconnected pads. Rather than resist this condition, the project uses it as a quiet organiser, turning topography into a legible logistics landscape and giving the facility a clear, civic-like front without departing from its industrial discipline.' },
